@@ -29,12 +29,12 @@ if not os.path.exists(MODEL_PATH):
 # ----------------------------
 @st.cache_resource
 def load_model():
-    return tf.keras.models.load_model("model.h5")
+    return tf.keras.models.load_model("outputs/model.h5")
 
-model = load_model("outputs/model.h5")
+model = load_model()
 
 
-model = load_model("outputs/model.h5")
+model = load_model()
 
 # ----------------------------
 # Class Names (ORDER MUST MATCH TRAINING)
@@ -85,3 +85,4 @@ if uploaded_file is not None:
 
     except Exception as e:
         st.error(f"⚠️ Error processing image: {e}")
+
