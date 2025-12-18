@@ -18,7 +18,7 @@ st.write("Upload an image to classify the activity")
 # ----------------------------
 # Check Model File
 # ----------------------------
-MODEL_PATH = "model.h5"
+MODEL_PATH = "output/model.h5"
 
 if not os.path.exists(MODEL_PATH):
     st.error("❌ model.h5 not found. Please place it in the same folder as app.py")
@@ -85,4 +85,5 @@ if uploaded_file is not None:
 
     except Exception as e:
         st.error(f"⚠️ Error processing image: {e}")
+
 
