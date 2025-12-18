@@ -29,9 +29,12 @@ if not os.path.exists(MODEL_PATH):
 # ----------------------------
 @st.cache_resource
 def load_model():
-    return tf.keras.models.load_model(MODEL_PATH)
+    return tf.keras.models.load_model("model.h5")
 
-model = load_model()
+model = load_model("outputs/model.h5")
+
+
+model = load_model("outputs/model.h5")
 
 # ----------------------------
 # Class Names (ORDER MUST MATCH TRAINING)
