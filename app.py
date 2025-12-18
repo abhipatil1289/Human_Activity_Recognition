@@ -19,7 +19,7 @@ st.write("Upload an image to classify the activity")
 # ----------------------------
 @st.cache_resource
 def load_model():
-    model = tf.keras.models.load_model("model.keras")
+    model = tf.keras.models.load_model("model.h5")
     return model
 
 model = load_model()
@@ -67,4 +67,5 @@ if uploaded_file is not None:
     st.subheader("Class Probabilities")
     for i, class_name in enumerate(class_names):
         st.write(f"{class_name}: {predictions[0][i]*100:.2f}%")
+
 
