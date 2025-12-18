@@ -18,7 +18,7 @@ st.write("Upload an image to classify the activity")
 # ----------------------------
 # Check Model File
 # ----------------------------
-MODEL_PATH = "outputs/model.h5"
+MODEL_PATH = 'my_model.keras'
 
 if not os.path.exists(MODEL_PATH):
     st.error("❌ model.h5 not found. Please place it in the same folder as app.py")
@@ -29,7 +29,7 @@ if not os.path.exists(MODEL_PATH):
 # ----------------------------
 @st.cache_resource
 def load_model():
-    return tf.keras.models.load_model("outputs/model.h5")
+    return tf.keras.models.load_model('my_model.keras')
 
 model = load_model()
 
@@ -85,6 +85,7 @@ if uploaded_file is not None:
 
     except Exception as e:
         st.error(f"⚠️ Error processing image: {e}")
+
 
 
 
